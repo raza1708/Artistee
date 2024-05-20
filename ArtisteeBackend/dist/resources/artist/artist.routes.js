@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var artist_controller_1 = require("./artist.controller");
+var router = (0, express_1.Router)();
+router.route('/booking/:index').post(artist_controller_1.getAllBooking);
+router.route('/add-artist').post(artist_controller_1.addArtist);
+router.route('/:id').put(artist_controller_1.updateArtist).delete(artist_controller_1.deleteArtist);
+router.route('/getPutUrl').post(artist_controller_1.getUploadImageUrl);
+exports.default = router;
